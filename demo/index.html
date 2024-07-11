@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            position: relative;
+            /* display: none; */
+        }
+
+        .active {
+            display: inline-block;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #tabs li {
+            display: inline-block;
+            padding: 10px;
+            background-color: grey;
+            margin-left: 10px;
+
+        }
+
+        .active {
+            color: white;
+            border: 2px solid black;
+        }
+
+        .content {
+            background-color: gray;
+            height: 200px;
+            padding: 10px;
+        }
+
+        .bgcolor {
+            opacity: 0.5;
+        }
+
+        /* .content div{
+            display: none;
+         } */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li> 
+            <a class="myClass"> my link</a>
+        </li>
+        <li> 
+            <a> my link</a>
+        </li>
+        <li> 
+            <a class="myClass"> my link</a>
+        </li>
+        <li> 
+            <a> my link</a>
+        </li>
+        <li>
+            <div>
+                <p class="myClass">para</p>
+            </div>
+        </li>
+    </ul>
+    <p class="myClass">par</p>
+
+    <!-- <button onclick="test2()">hide</button>
+    <button onclick="test1()">show</button>
+    <button onclick="test3()">toggle</button>
+    <button onclick="fadeInDiv()">fadeIn</button>
+    <button onclick="fadeOutDiv()">fadeOut</button>
+    <button onclick="fadeToggleDiv()">fadetoggle</button>
+    <button onclick="slideUpDiv()">slideUp</button>
+    <button onclick="slideDownDiv()">slideDown</button>
+    <button onclick="slideToggleDiv()">slidetoggle</button>
+    <button onclick="animateDiv()">animation</button>
+    <button onclick="stopDiv()">stop</button> -->
+
+    <!-- <ul id="tabs">
+        <li class="active tab1"> Tab 1</li>
+        <li class="tab2"> Tab 2</li>
+        <li  class = "tab3"> Tab 3</li>
+
+    </ul> -->
+    <!-- <div class="content">
+        <div id="tab1">
+            div 1
+
+        </div>
+        <div style="display: none;" id="tab2">
+            div 2
+
+        </div>
+        <div id="tab3" style="display: none;">
+            div 3
+
+        </div>
+
+    </div> -->
+    <script>
+        ///////=====traversing methods
+        //==find() // end()
+        $("ul")
+        .find(".myClass")
+        .css({
+            "padding":"20px",
+            "background-color":"red"
+        })
+        .end()
+        .addClass("parent")
+        //not();
+       // $("div").not(".myDiv").css("background-color","red")
+
+        ////////===channing//////
+    //    $("div")
+    //    .css("color","red")
+    //    .text("hello")
+    //    .click(function(){
+    //     alert("mydiv");
+    //    })
+
+        // ["a","b","c"].join("").toUpperCase();
+        ////////===============
+        // $("div").empty();
+        ////////////==========animation
+        function stopDiv(){
+            $("div").stop();
+        }
+        function animateDiv(){
+            $("div").animate({
+                "left":"300px"
+            },2000)
+        }
+        function slideUpDiv(){
+            $("div").slideUp(2000);
+
+        }
+        function slideDownDiv(){
+            $("div").slideDown(4000);
+            
+        }
+        function slideToggleDiv(){
+            $("div").slideToggle("fast");
+            
+        }
+        function fadeInDiv() {
+
+            $("div").fadeIn(2000);
+        }
+        function fadeOutDiv() {
+
+            $("div").fadeOut(3000);
+        }
+        function fadeToggleDiv() {
+
+            $("div").fadeToggle("slow");
+        }
+
+        /////////=======hover event mouseenter and mouseleave
+        // $(".content").hover(function(){
+        //     //one function mouseenter mouseleave
+        //     $(this).toggleClass("bgcolor");
+
+        // })
+        // $(".content").hover(function(){
+        //     //one function mouseenter mouseleave
+        //     $(this).addClass("bgcolor");
+
+        // },function(){
+        //     //two function
+        //     // console.log("leave");
+        //     $(this).removeClass("bgcolor");
+
+        // })
+        ///============================
+        // function test1(){
+        //     $("div").addClass("active");
+        // }
+        // function test2(){
+        //     $("div").hide();
+        // }
+        // function test3(){
+        //     $("div").toggle();
+        // }
+        // $(".content div").hide();
+        // $($("#tabs li")[0]).addClass("active");
+
+        // $("#tabs li").click(function(){
+        //     var contentId = $(this).attr("class");
+        //     console.log(contentId);//"tab1"
+        //     ///hide old tab and contnet
+        //     $(".content div").hide();
+        //     $(".active").removeClass("active");
+
+
+        //     //show new tab and content
+        //     $("#"+contentId).show();
+        //     $(this).addClass("active");
+
+        // })
+
+
+    </script>
+</body>
+
+</html>
